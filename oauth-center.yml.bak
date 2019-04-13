@@ -1,7 +1,7 @@
 spring:
   redis:
-    host: 192.168.0.117
-    port: 6378
+    host: local.redis.com
+    port: 6379
     password:
     timeout: 10s
     lettuce:
@@ -12,18 +12,18 @@ spring:
         max-wait: -1ms
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://192.168.0.117:3307/cloud_oauth?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false
+    url: jdbc:mysql://local.mysql.com:3306/cloud_oauth?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false
     username: root
-    password: 1234
+    password: root
     hikari:
       minimum-idle: 5
       maximum-pool-size: 20
       connection-test-query: SELECT 1
   rabbitmq:
-    host: 192.168.0.117
+    host: local.rabbitmq.com
     port: 5672
-    username: admin
-    password: admin
+    username: cloud-dev
+    password: cloud-dev
     virtual-host: /
   mvc:
     servlet:
